@@ -3,6 +3,10 @@
 
 > A (high level) class modeling an asynchronously retrieved collection of data.
 
+<div align="center">
+    <img src="Example/Example.gif" alt="GIF" />
+</div>
+
 # Installation with CocoaPods
 Add the following lines to your Podfile and run `pod install`.
 
