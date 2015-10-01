@@ -9,7 +9,7 @@
 @import UIKit;
 @import DZNEmptyDataSet;
 
-@interface ViewController : UIViewController
+@interface MyViewController : UIViewController
 
 #pragma mark - Properties
 @property (nonatomic, strong, readwrite) UITableView *tableView;

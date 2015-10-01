@@ -6,11 +6,11 @@
 //  Copyright © 2015 originate.com. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "MyViewController.h"
 #import "MyDataSource.h"
 #import "MyEmptyController.h"
 
-@interface ViewController () <OriginateAsyncCollectionDelegate,
+@interface MyViewController () <OriginateAsyncCollectionDelegate,
                               MyEmptyControllerDelegate>
 
 #pragma mark - Properties
@@ -19,7 +19,7 @@
 
 @end
 
-@implementation ViewController
+@implementation MyViewController
 
 #pragma mark - UIViewController
 
@@ -59,7 +59,7 @@
     return @"Async Data Source";
 }
 
-#pragma mark - ViewController
+#pragma mark - MyViewController
 
 - (void)addContent:(id)sender
 {

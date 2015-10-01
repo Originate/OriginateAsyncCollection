@@ -7,14 +7,14 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
+#import "MyViewController.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    ViewController *controller = [[ViewController alloc] init];
+    MyViewController *controller = [[MyViewController alloc] init];
     controller.view.backgroundColor = [UIColor whiteColor];
     
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:controller];

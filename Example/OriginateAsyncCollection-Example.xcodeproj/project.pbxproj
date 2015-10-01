@@ -10,7 +10,7 @@
 		92E062DA7A031F31C190D5B4 /* Pods_OriginateAsyncCollection_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F54A85B8C4CF95F215A0C497 /* Pods_OriginateAsyncCollection_Example.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		F9DFCCAC1BBC5F2500447D51 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DFCCAB1BBC5F2500447D51 /* main.m */; };
 		F9DFCCAF1BBC5F2500447D51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DFCCAE1BBC5F2500447D51 /* AppDelegate.m */; };
-		F9DFCCB21BBC5F2500447D51 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DFCCB11BBC5F2500447D51 /* ViewController.m */; };
+		F9DFCCB21BBC5F2500447D51 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DFCCB11BBC5F2500447D51 /* MyViewController.m */; };
 		F9DFCCB71BBC5F2500447D51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9DFCCB61BBC5F2500447D51 /* Assets.xcassets */; };
 		F9DFCCBA1BBC5F2500447D51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9DFCCB81BBC5F2500447D51 /* LaunchScreen.storyboard */; };
 		F9DFCCC61BBC986800447D51 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = F9DFCCC51BBC986800447D51 /* README.md */; settings = {ASSET_TAGS = (); }; };
@@ -28,8 +28,8 @@
 		F9DFCCAB1BBC5F2500447D51 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F9DFCCAD1BBC5F2500447D51 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F9DFCCAE1BBC5F2500447D51 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		F9DFCCB01BBC5F2500447D51 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		F9DFCCB11BBC5F2500447D51 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F9DFCCB01BBC5F2500447D51 /* MyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
+		F9DFCCB11BBC5F2500447D51 /* MyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
 		F9DFCCB61BBC5F2500447D51 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F9DFCCB91BBC5F2500447D51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F9DFCCBB1BBC5F2500447D51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -95,15 +95,13 @@
 			children = (
 				F9DFCCAD1BBC5F2500447D51 /* AppDelegate.h */,
 				F9DFCCAE1BBC5F2500447D51 /* AppDelegate.m */,
-				F9DFCCB01BBC5F2500447D51 /* ViewController.h */,
-				F9DFCCB11BBC5F2500447D51 /* ViewController.m */,
+				F9DFCCB01BBC5F2500447D51 /* MyViewController.h */,
+				F9DFCCB11BBC5F2500447D51 /* MyViewController.m */,
 				F9DFCCCB1BBC992600447D51 /* MyDataSource.h */,
 				F9DFCCCC1BBC992600447D51 /* MyDataSource.m */,
 				F9DFCCCE1BBC9A7F00447D51 /* MyEmptyController.h */,
 				F9DFCCCF1BBC9A7F00447D51 /* MyEmptyController.m */,
-				F9DFCCB61BBC5F2500447D51 /* Assets.xcassets */,
-				F9DFCCB81BBC5F2500447D51 /* LaunchScreen.storyboard */,
-				F9DFCCBB1BBC5F2500447D51 /* Info.plist */,
+				F9DFCCD11BBCB8D800447D51 /* Resources */,
 				F9DFCCAA1BBC5F2500447D51 /* Supporting Files */,
 			);
 			path = "OriginateAsyncCollection-Example";
@@ -125,6 +123,16 @@
 				F9DFCCC51BBC986800447D51 /* README.md */,
 			);
 			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		F9DFCCD11BBCB8D800447D51 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F9DFCCB61BBC5F2500447D51 /* Assets.xcassets */,
+				F9DFCCB81BBC5F2500447D51 /* LaunchScreen.storyboard */,
+				F9DFCCBB1BBC5F2500447D51 /* Info.plist */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,7 +257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9DFCCB21BBC5F2500447D51 /* ViewController.m in Sources */,
+				F9DFCCB21BBC5F2500447D51 /* MyViewController.m in Sources */,
 				F9DFCCD01BBC9A7F00447D51 /* MyEmptyController.m in Sources */,
 				F9DFCCAF1BBC5F2500447D51 /* AppDelegate.m in Sources */,
 				F9DFCCC61BBC986800447D51 /* README.md in Sources */,
