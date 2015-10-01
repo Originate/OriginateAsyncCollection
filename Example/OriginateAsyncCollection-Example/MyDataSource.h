@@ -8,6 +8,7 @@
 
 @import UIKit;
 @import OriginateAsyncCollection;
+@import DZNEmptyDataSet;
 
 @interface MyDataSource <__covariant T> : OriginateAsyncCollection <UITableViewDataSource,
                                                                     UITableViewDelegate>

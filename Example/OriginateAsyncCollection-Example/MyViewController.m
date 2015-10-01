@@ -10,8 +10,7 @@
 #import "MyDataSource.h"
 #import "MyEmptyController.h"
 
-@interface MyViewController () <OriginateAsyncCollectionDelegate,
-                              MyEmptyControllerDelegate>
+@interface MyViewController () <MyEmptyControllerDelegate>
 
 #pragma mark - Properties
 @property (nonatomic, strong, readwrite) MyDataSource<NSDate *> *dataSource;
@@ -118,7 +117,6 @@
 {
     if (!_dataSource) {
         _dataSource = [[MyDataSource alloc] initWithTableView:self.tableView];
-        _dataSource.delegate = self;
     }
     
     return _dataSource;
@@ -133,23 +131,6 @@
     }
     
     return _emptyController;
-}
-
-#pragma mark - <OriginateAsyncCollectionDelegate>
-
-- (void)asyncCollectionWillLoad:(OriginateAsyncCollection *)collection
-{
-    [self.tableView reloadEmptyDataSet];
-}
-
-- (void)asyncCollectionDidLoad:(OriginateAsyncCollection *)collection
-{
-    [self.tableView reloadData];
-}
-
-- (void)asyncCollectionWillReload:(OriginateAsyncCollection *)collection
-{
-    [self.tableView reloadEmptyDataSet];
 }
 
 #pragma mark - <MyEmptyControllerDelegate>
