@@ -78,4 +78,9 @@
     [self.tableView reloadEmptyDataSet];
 }
 
+- (void)asyncCollectionDidReload:(OriginateAsyncCollection *)collection
+{
+    [self.tableView reloadEmptyDataSet];
+}
+
 @end

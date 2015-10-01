@@ -85,9 +85,17 @@ typedef NS_ENUM(NSUInteger, OriginateAsyncCollectionState) {
     OSSpinLockLock(&_spinlock);
     
     if (index < self.elements.count) {
+        if ([self.delegate respondsToSelector:@selector(asyncCollectionWillReload:)]) {
+            [self.delegate asyncCollectionWillReload:self];
+        }
+        
         NSMutableArray *mutableElements = [self.elements mutableCopy];
         [mutableElements removeObjectAtIndex:index];
         _elements = [mutableElements copy];
+        
+        if ([self.delegate respondsToSelector:@selector(asyncCollectionDidReload:)]) {
+            [self.delegate asyncCollectionDidReload:self];
+        }
     }
     
     OSSpinLockUnlock(&_spinlock);
