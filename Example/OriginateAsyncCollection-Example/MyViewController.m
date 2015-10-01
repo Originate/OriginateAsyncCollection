@@ -62,14 +62,14 @@
 
 - (void)addContent:(id)sender
 {
-    NSArray<NSDate *> *existingContent = self.dataSource.elements;
-    NSArray<NSDate *> *newContent = [existingContent arrayByAddingObject:[NSDate date]];
-    
     self.navigationItem.rightBarButtonItem = [self activityBarButtonItem];
     
     // 2. Kickoff Async / Delayed Content Loading. Think Pull To Refresh.
     [self.dataSource setLoading];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        NSArray<NSDate *> *existingContent = self.dataSource.elements;
+        NSArray<NSDate *> *newContent = [existingContent arrayByAddingObject:[NSDate date]];
+        
         [self.dataSource setElements:newContent];
         self.navigationItem.rightBarButtonItem = [self addContentBarButtonItem];
     });
