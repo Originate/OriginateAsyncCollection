@@ -37,6 +37,7 @@ typedef NS_ENUM(NSUInteger, OriginateAsyncCollectionState) {
     
     if (self) {
         _spinlock = OS_SPINLOCK_INIT;
+        _state = OriginateAsyncCollectionStateIdle;
     }
     
     return self;
@@ -89,9 +90,11 @@ typedef NS_ENUM(NSUInteger, OriginateAsyncCollectionState) {
             [self.delegate asyncCollectionWillReload:self];
         }
         
-        NSMutableArray *mutableElements = [self.elements mutableCopy];
-        [mutableElements removeObjectAtIndex:index];
-        _elements = [mutableElements copy];
+        _elements = ({
+            NSMutableArray *mutableElements = [self.elements mutableCopy];
+            [mutableElements removeObjectAtIndex:index];
+            [mutableElements copy];
+        });
         
         if ([self.delegate respondsToSelector:@selector(asyncCollectionDidReload:)]) {
             [self.delegate asyncCollectionDidReload:self];
