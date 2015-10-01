@@ -8,7 +8,7 @@
 
 #import "MyDataSource.h"
 
-@interface MyDataSource () <OriginateAsyncCollectionDelegate>
+@interface MyDataSource ()
 
 #pragma mark - Properties
 @property (nonatomic, weak, readwrite) UITableView *tableView;
@@ -25,7 +25,6 @@
     
     if (self) {
         _tableView = tableView;
-        self.delegate = self;
         [tableView registerClass:[UITableViewCell class]
           forCellReuseIdentifier:NSStringFromClass([UITableViewCell class])];
     }
@@ -59,28 +58,6 @@
         [self removeElementAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
     }
-}
-
-#pragma mark - <OriginateAsyncCollectionDelegate>
-
-- (void)asyncCollectionWillLoad:(OriginateAsyncCollection *)collection
-{
-    [self.tableView reloadEmptyDataSet];
-}
-
-- (void)asyncCollectionDidLoad:(OriginateAsyncCollection *)collection
-{
-    [self.tableView reloadData];
-}
-
-- (void)asyncCollectionWillReload:(OriginateAsyncCollection *)collection
-{
-    [self.tableView reloadEmptyDataSet];
-}
-
-- (void)asyncCollectionDidReload:(OriginateAsyncCollection *)collection
-{
-    [self.tableView reloadEmptyDataSet];
 }
 
 @end
