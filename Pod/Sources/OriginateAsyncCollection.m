@@ -129,7 +129,8 @@ typedef NS_ENUM(NSUInteger, OriginateAsyncCollectionState) {
                 self.state = OriginateAsyncCollectionStateReloading;
                 if ([self.delegate respondsToSelector:@selector(asyncCollectionWillReload:)]) {
                     [self.delegate asyncCollectionWillReload:self];
-                }            }
+                }
+            }
             break;
         }
         case OriginateAsyncCollectionStateReloadingFailed:
