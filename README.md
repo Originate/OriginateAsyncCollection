@@ -1,4 +1,4 @@
-# OriginateUI
+# OriginateAsyncCollection
 [![CI Status](http://img.shields.io/travis/Originate/OriginateAsyncCollection.svg?style=flat)](https://travis-ci.org/Originate/OriginateAsyncCollection)
 
 > A (high level) class modeling an asynchronously retrieved collection of data.
