@@ -57,6 +57,10 @@
 
 - (void)addObjects:(NSArray *)objects handler:(OriginateMutableRemoteCollectionMutationHandler)addHandler
 {
+    if (!addHandler) {
+        return;
+    }
+    
     [self setLoading];
     
     if ([self.delegate respondsToSelector:@selector(remoteCollection:willAddObjects:)]) {
@@ -75,6 +79,10 @@
 
 - (void)addObjects:(NSArray *)objects
 {
+    if (!objects) {
+        return;
+    }
+    
     [self setState:OriginateRemoteCollectionStateIdle error:nil];
     [self.objects addObjectsFromArray:objects];
     
@@ -85,6 +93,10 @@
 
 - (void)revertAdditionOfObjects:(NSArray *)objects error:(NSError *)error
 {
+    if (!objects) {
+        return;
+    }
+    
     [self setState:OriginateRemoteCollectionStateIdle error:nil];
     [self.objects removeObjectsInArray:objects];
     
@@ -95,6 +107,10 @@
 
 - (void)removeObjects:(NSArray *)objects handler:(OriginateMutableRemoteCollectionMutationHandler)removeHandler
 {
+    if (!removeHandler) {
+        return;
+    }
+    
     [self setLoading];
     
     if ([self.delegate respondsToSelector:@selector(remoteCollection:willRemoveObjects:)]) {
@@ -117,6 +133,10 @@
 
 - (void)removeObjects:(NSArray *)objects
 {
+    if (!objects) {
+        return;
+    }
+    
     [self setState:OriginateRemoteCollectionStateIdle error:nil];
     [self.objects removeObjectsInArray:objects];
     
@@ -127,6 +147,10 @@
 
 - (void)revertRemovalOfObjects:(NSArray *)objects error:(NSError *)error
 {
+    if (!objects) {
+        return;
+    }
+    
     [self setState:OriginateRemoteCollectionStateIdle error:nil];
     [self.objects addObjectsFromArray:objects];
     

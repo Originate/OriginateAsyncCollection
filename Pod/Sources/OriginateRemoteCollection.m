@@ -30,6 +30,10 @@
 
 - (void)load:(OriginateRemoteCollectionLoadHandler)loadHandler
 {
+    if (!loadHandler) {
+        return;
+    }
+    
     [self setLoading];
     
     loadHandler(^(NSArray *result, NSError *error) {
