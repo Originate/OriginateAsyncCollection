@@ -43,12 +43,12 @@
     return _objects;
 }
 
-- (void)setObjects:(NSMutableArray *)objects
+- (void)setObjects:(NSArray *)objects
 {
     [self setState:OriginateRemoteCollectionStateIdle error:nil];
     
     if (![_objects isEqualToArray:objects]) {
-        _objects = objects ?: [NSMutableArray array];
+        _objects = [objects mutableCopy] ?: [NSMutableArray array];
     }
     
     if ([self.delegate respondsToSelector:@selector(remoteCollectionDidLoad:)]) {
