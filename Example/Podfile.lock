@@ -1,17 +1,17 @@
 PODS:
   - DZNEmptyDataSet (1.7.2)
-  - OriginateAsyncCollection (0.0.1)
+  - OriginateRemoteCollection (0.0.1)
 
 DEPENDENCIES:
   - DZNEmptyDataSet
-  - OriginateAsyncCollection (from `../`)
+  - OriginateRemoteCollection (from `../`)
 
 EXTERNAL SOURCES:
-  OriginateAsyncCollection:
+  OriginateRemoteCollection:
     :path: "../"
 
 SPEC CHECKSUMS:
   DZNEmptyDataSet: 0ec00bfc230d7450997b60c127afdd0b9f24f3b6
-  OriginateAsyncCollection: 071dc1a1d6e82ff87a33d1c80b24b072d3d987de
+  OriginateRemoteCollection: b8386d82fc2d677dbace955a8095bfe9f1444cb0
 
 COCOAPODS: 0.38.2

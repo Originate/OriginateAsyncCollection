@@ -1,8 +1,8 @@
 source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
-target 'OriginateAsyncCollection-Example', :exclusive => true do
-  pod "OriginateAsyncCollection", :path => "../"
+target 'OriginateRemoteCollection-Example', :exclusive => true do
+  pod "OriginateRemoteCollection", :path => "../"
   pod "DZNEmptyDataSet"
 end
 

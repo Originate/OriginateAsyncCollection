@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:OriginateAsyncCollection-Example.xcodeproj">
+      location = "self:OriginateRemoteCollection-Example.xcodeproj">
    </FileRef>
 </Workspace>

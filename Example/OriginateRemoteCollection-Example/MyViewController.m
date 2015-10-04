@@ -1,25 +1,25 @@
 //
 //  ViewController.m
-//  OriginateAsyncCollection-Example
+//  OriginateRemoteCollection-Example
 //
 //  Created by Philip Kluz on 9/30/15.
 //  Copyright © 2015 originate.com. All rights reserved.
 //
 
 #import "MyViewController.h"
-#import "MyDataSource.h"
+#import "MyDateDataSource.h"
 #import "MyEmptyController.h"
 
-@interface MyViewController () <MyEmptyControllerDelegate,
-                                OriginateAsyncCollectionDelegate>
+@interface MyViewController () <MyEmptyControllerDelegate>
 
 #pragma mark - Properties
-@property (nonatomic, strong, readwrite) MyDataSource<NSDate *> *dataSource;
+@property (nonatomic, strong, readwrite) MyDateDataSource *dataSource;
 @property (nonatomic, strong, readwrite) MyEmptyController *emptyController;
 
 @end
 
 @implementation MyViewController
+
 
 #pragma mark - UIViewController
 
@@ -41,11 +41,12 @@
 {
     [super viewWillAppear:animated];
     
-    // 1. Kickoff Loading.
-    [self.dataSource setLoading];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.dataSource setElements:@[]];
-    });
+    [self.dataSource load:^(void (^completion)(NSArray *result, NSError *error))
+     {
+         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+             completion(@[], nil);
+         });
+     }];
 }
 
 - (void)viewWillLayoutSubviews
@@ -56,34 +57,39 @@
 
 - (NSString *)title
 {
-    return @"Async Data Source";
+    return @"Remote Collection Example";
 }
+
 
 #pragma mark - MyViewController
 
 - (void)addContent:(id)sender
 {
     self.navigationItem.rightBarButtonItem = [self activityBarButtonItem];
-    
-    // 2. Kickoff Async / Delayed Content Loading. Think Pull To Refresh.
-    [self.dataSource setLoading];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        NSArray<NSDate *> *existingContent = self.dataSource.elements;
-        NSArray<NSDate *> *newContent = [existingContent arrayByAddingObject:[NSDate date]];
-        
-        [self.dataSource setElements:newContent];
-        self.navigationItem.rightBarButtonItem = [self addContentBarButtonItem];
-    });
+
+    __weak __typeof(self) weakSelf = self;
+    [self.dataSource addObjects:@[[NSDate date]]
+                        handler:^(void (^completion)(BOOL success, NSError *error))
+     {
+         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+             __strong __typeof(self) strongSelf = weakSelf;
+             completion(YES, nil);
+             strongSelf.navigationItem.rightBarButtonItem = [strongSelf addContentBarButtonItem];
+         });
+    }];
 }
 
 - (void)refresh:(UIRefreshControl *)control
 {
-    [self.dataSource setLoading];
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [control endRefreshing];
-        [self.dataSource setElements:self.dataSource.elements];
-    });
+    __weak __typeof(self) weakSelf = self;
+    [self.dataSource load:^(void (^completion)(NSArray *result, NSError *error))
+     {
+         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+             __strong __typeof(self) strongSelf = weakSelf;
+             completion([strongSelf.dataSource allObjects], nil);
+             [control endRefreshing];
+         });
+     }];
 }
 
 - (UIBarButtonItem *)addContentBarButtonItem
@@ -114,11 +120,10 @@
     return _tableView;
 }
 
-- (MyDataSource<NSDate *> *)dataSource
+- (MyDateDataSource *)dataSource
 {
     if (!_dataSource) {
-        _dataSource = [[MyDataSource alloc] initWithTableView:self.tableView];
-        _dataSource.delegate = self;
+        _dataSource = [[MyDateDataSource alloc] initWithTableView:self.tableView];
     }
     
     return _dataSource;
@@ -135,33 +140,12 @@
     return _emptyController;
 }
 
+
 #pragma mark - <MyEmptyControllerDelegate>
 
 - (void)emptyControllerRequestsReload:(MyEmptyController *)emptyController
 {
     [self refresh:nil];
-}
-
-#pragma mark - <OriginateAsyncCollectionDelegate>
-
-- (void)asyncCollectionWillLoad:(OriginateAsyncCollection *)collection
-{
-    [self.tableView reloadEmptyDataSet];
-}
-
-- (void)asyncCollectionDidLoad:(OriginateAsyncCollection *)collection
-{
-    [self.tableView reloadData];
-}
-
-- (void)asyncCollectionWillReload:(OriginateAsyncCollection *)collection
-{
-    [self.tableView reloadEmptyDataSet];
-}
-
-- (void)asyncCollectionDidReload:(OriginateAsyncCollection *)collection
-{
-    [self.tableView reloadEmptyDataSet];
 }
 
 @end
