@@ -1,6 +1,6 @@
 //
 //  MyEmptyController.m
-//  OriginateAsyncCollection-Example
+//  OriginateRemoteCollection-Example
 //
 //  Created by Philip Kluz on 10/1/15.
 //  Copyright © 2015 originate.com. All rights reserved.
@@ -12,7 +12,7 @@
 
 #pragma mark - Methods
 @property (nonatomic, strong, readwrite) UIScrollView *scrollView;
-@property (nonatomic, strong, readwrite) MyDataSource *dataSource;
+@property (nonatomic, strong, readwrite) MyDateDataSource *dataSource;
 
 @end
 
@@ -21,7 +21,7 @@
 #pragma mark - MyEmptyController
 
 - (instancetype)initWithScrollView:(UIScrollView *)scrollView
-                        dataSource:(MyDataSource *)dataSource
+                        dataSource:(MyDateDataSource *)dataSource
 {
     self = [super init];
     
@@ -33,7 +33,7 @@
     return self;
 }
 
-- (void)setDataSource:(MyDataSource *)dataSource
+- (void)setDataSource:(MyDateDataSource *)dataSource
 {
     _dataSource = dataSource;
     [self.scrollView reloadEmptyDataSet];
@@ -71,11 +71,10 @@
 - (NSAttributedString *)descriptionForEmptyDataSet:(UIScrollView *)scrollView
 {
     if ([self.dataSource isEmpty]) {
-        return [[NSAttributedString alloc] initWithString:@"Sorry about that. Try creating some content (+)."];
+        return [[NSAttributedString alloc] initWithString:@"Sorry about that. Try creating some content +."];
     }
     
     return nil;
 }
-
 
 @end

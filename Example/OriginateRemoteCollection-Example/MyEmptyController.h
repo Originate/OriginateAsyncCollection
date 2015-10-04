@@ -1,6 +1,6 @@
 //
 //  MyEmptyController.h
-//  OriginateAsyncCollection-Example
+//  OriginateRemoteCollection-Example
 //
 //  Created by Philip Kluz on 10/1/15.
 //  Copyright © 2015 originate.com. All rights reserved.
@@ -9,7 +9,7 @@
 @import Foundation;
 @import DZNEmptyDataSet;
 
-#import "MyDataSource.h"
+#import "MyDateDataSource.h"
 
 @protocol MyEmptyControllerDelegate;
 
@@ -21,7 +21,7 @@
 
 #pragma mark - Methods
 - (instancetype)initWithScrollView:(UIScrollView *)scrollView
-                        dataSource:(MyDataSource *)dataSource;
+                        dataSource:(MyDateDataSource *)dataSource;
 
 @end
 
