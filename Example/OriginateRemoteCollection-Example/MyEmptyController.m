@@ -1,6 +1,6 @@
 //
 //  MyEmptyController.m
-//  OriginateAsyncCollection-Example
+//  OriginateRemoteCollection-Example
 //
 //  Created by Philip Kluz on 10/1/15.
 //  Copyright © 2015 originate.com. All rights reserved.
@@ -71,11 +71,10 @@
 - (NSAttributedString *)descriptionForEmptyDataSet:(UIScrollView *)scrollView
 {
     if ([self.dataSource isEmpty]) {
-        return [[NSAttributedString alloc] initWithString:@"Sorry about that. Try creating some content (+)."];
+        return [[NSAttributedString alloc] initWithString:@"Sorry about that. Try creating some content +."];
     }
     
     return nil;
 }
-
 
 @end

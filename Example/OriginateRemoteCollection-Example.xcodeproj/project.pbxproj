@@ -7,24 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		92E062DA7A031F31C190D5B4 /* Pods_OriginateAsyncCollection_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F54A85B8C4CF95F215A0C497 /* Pods_OriginateAsyncCollection_Example.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		92E062DA7A031F31C190D5B4 /* Pods_OriginateRemoteCollection_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F54A85B8C4CF95F215A0C497 /* Pods_OriginateRemoteCollection_Example.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		F9DFCCAC1BBC5F2500447D51 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DFCCAB1BBC5F2500447D51 /* main.m */; };
 		F9DFCCAF1BBC5F2500447D51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DFCCAE1BBC5F2500447D51 /* AppDelegate.m */; };
 		F9DFCCB21BBC5F2500447D51 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DFCCB11BBC5F2500447D51 /* MyViewController.m */; };
 		F9DFCCB71BBC5F2500447D51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9DFCCB61BBC5F2500447D51 /* Assets.xcassets */; };
 		F9DFCCBA1BBC5F2500447D51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9DFCCB81BBC5F2500447D51 /* LaunchScreen.storyboard */; };
-		F9DFCCC61BBC986800447D51 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = F9DFCCC51BBC986800447D51 /* README.md */; settings = {ASSET_TAGS = (); }; };
-		F9DFCCC81BBC986E00447D51 /* OriginateAsyncCollection.podspec in Resources */ = {isa = PBXBuildFile; fileRef = F9DFCCC71BBC986E00447D51 /* OriginateAsyncCollection.podspec */; settings = {ASSET_TAGS = (); }; };
-		F9DFCCCA1BBC987200447D51 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = F9DFCCC91BBC987200447D51 /* LICENSE */; settings = {ASSET_TAGS = (); }; };
 		F9DFCCCD1BBC992600447D51 /* MyDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DFCCCC1BBC992600447D51 /* MyDataSource.m */; settings = {ASSET_TAGS = (); }; };
 		F9DFCCD01BBC9A7F00447D51 /* MyEmptyController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DFCCCF1BBC9A7F00447D51 /* MyEmptyController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4A0E30690E6B9DF8F6FFAE9C /* Pods-OriginateAsyncCollection-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OriginateAsyncCollection-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-OriginateAsyncCollection-Example/Pods-OriginateAsyncCollection-Example.release.xcconfig"; sourceTree = "<group>"; };
-		CC1A230148ABD1866B9CE362 /* Pods-OriginateAsyncCollection-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OriginateAsyncCollection-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OriginateAsyncCollection-Example/Pods-OriginateAsyncCollection-Example.debug.xcconfig"; sourceTree = "<group>"; };
-		F54A85B8C4CF95F215A0C497 /* Pods_OriginateAsyncCollection_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OriginateAsyncCollection_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F9DFCCA71BBC5F2500447D51 /* OriginateAsyncCollection-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OriginateAsyncCollection-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A0E30690E6B9DF8F6FFAE9C /* Pods-OriginateRemoteCollection-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OriginateRemoteCollection-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-OriginateRemoteCollection-Example/Pods-OriginateRemoteCollection-Example.release.xcconfig"; sourceTree = "<group>"; };
+		CC1A230148ABD1866B9CE362 /* Pods-OriginateRemoteCollectionExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OriginateRemoteCollectionExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OriginateRemoteCollection-Example/Pods-OriginateRemoteCollection-Example.debug.xcconfig"; sourceTree = "<group>"; };
+		F54A85B8C4CF95F215A0C497 /* Pods_OriginateRemoteCollection_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OriginateRemoteCollection_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9DFCCA71BBC5F2500447D51 /* OriginateRemoteCollection-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OriginateRemoteCollection-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9DFCCAB1BBC5F2500447D51 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F9DFCCAD1BBC5F2500447D51 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F9DFCCAE1BBC5F2500447D51 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -34,7 +31,7 @@
 		F9DFCCB91BBC5F2500447D51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F9DFCCBB1BBC5F2500447D51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9DFCCC51BBC986800447D51 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		F9DFCCC71BBC986E00447D51 /* OriginateAsyncCollection.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = OriginateAsyncCollection.podspec; path = ../OriginateAsyncCollection.podspec; sourceTree = "<group>"; };
+		F9DFCCC71BBC986E00447D51 /* OriginateRemoteCollection.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = OriginateRemoteCollection.podspec; path = ../OriginateRemoteCollection.podspec; sourceTree = "<group>"; };
 		F9DFCCC91BBC987200447D51 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		F9DFCCCB1BBC992600447D51 /* MyDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDataSource.h; sourceTree = "<group>"; };
 		F9DFCCCC1BBC992600447D51 /* MyDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDataSource.m; sourceTree = "<group>"; };
@@ -47,7 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92E062DA7A031F31C190D5B4 /* Pods_OriginateAsyncCollection_Example.framework in Frameworks */,
+				92E062DA7A031F31C190D5B4 /* Pods_OriginateRemoteCollection_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,8 +54,8 @@
 		0FDF77BAE76F9EBEF79A7221 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				CC1A230148ABD1866B9CE362 /* Pods-OriginateAsyncCollection-Example.debug.xcconfig */,
-				4A0E30690E6B9DF8F6FFAE9C /* Pods-OriginateAsyncCollection-Example.release.xcconfig */,
+				CC1A230148ABD1866B9CE362 /* Pods-OriginateRemoteCollectionExample.debug.xcconfig */,
+				4A0E30690E6B9DF8F6FFAE9C /* Pods-OriginateRemoteCollection-Example.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -66,7 +63,7 @@
 		C50581B62867D40A6879FA9B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F54A85B8C4CF95F215A0C497 /* Pods_OriginateAsyncCollection_Example.framework */,
+				F54A85B8C4CF95F215A0C497 /* Pods_OriginateRemoteCollection_Example.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -75,7 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				F9DFCCC41BBC985900447D51 /* Podspec Metadata */,
-				F9DFCCA91BBC5F2500447D51 /* OriginateAsyncCollection-Example */,
+				F9DFCCA91BBC5F2500447D51 /* OriginateRemoteCollection-Example */,
 				F9DFCCA81BBC5F2500447D51 /* Products */,
 				0FDF77BAE76F9EBEF79A7221 /* Pods */,
 				C50581B62867D40A6879FA9B /* Frameworks */,
@@ -85,12 +82,12 @@
 		F9DFCCA81BBC5F2500447D51 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F9DFCCA71BBC5F2500447D51 /* OriginateAsyncCollection-Example.app */,
+				F9DFCCA71BBC5F2500447D51 /* OriginateRemoteCollection-Example.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F9DFCCA91BBC5F2500447D51 /* OriginateAsyncCollection-Example */ = {
+		F9DFCCA91BBC5F2500447D51 /* OriginateRemoteCollection-Example */ = {
 			isa = PBXGroup;
 			children = (
 				F9DFCCAD1BBC5F2500447D51 /* AppDelegate.h */,
@@ -104,7 +101,7 @@
 				F9DFCCD11BBCB8D800447D51 /* Resources */,
 				F9DFCCAA1BBC5F2500447D51 /* Supporting Files */,
 			);
-			path = "OriginateAsyncCollection-Example";
+			path = "OriginateRemoteCollection-Example";
 			sourceTree = "<group>";
 		};
 		F9DFCCAA1BBC5F2500447D51 /* Supporting Files */ = {
@@ -119,7 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				F9DFCCC91BBC987200447D51 /* LICENSE */,
-				F9DFCCC71BBC986E00447D51 /* OriginateAsyncCollection.podspec */,
+				F9DFCCC71BBC986E00447D51 /* OriginateRemoteCollection.podspec */,
 				F9DFCCC51BBC986800447D51 /* README.md */,
 			);
 			name = "Podspec Metadata";
@@ -138,9 +135,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F9DFCCA61BBC5F2400447D51 /* OriginateAsyncCollection-Example */ = {
+		F9DFCCA61BBC5F2400447D51 /* OriginateRemoteCollection-Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F9DFCCBE1BBC5F2500447D51 /* Build configuration list for PBXNativeTarget "OriginateAsyncCollection-Example" */;
+			buildConfigurationList = F9DFCCBE1BBC5F2500447D51 /* Build configuration list for PBXNativeTarget "OriginateRemoteCollection-Example" */;
 			buildPhases = (
 				AF5FC8AA0B6BF4135D2D3EF6 /* Check Pods Manifest.lock */,
 				F9DFCCA31BBC5F2400447D51 /* Sources */,
@@ -153,9 +150,9 @@
 			);
 			dependencies = (
 			);
-			name = "OriginateAsyncCollection-Example";
-			productName = "OriginateAsyncCollection-Example";
-			productReference = F9DFCCA71BBC5F2500447D51 /* OriginateAsyncCollection-Example.app */;
+			name = "OriginateRemoteCollection-Example";
+			productName = "OriginateRemoteCollection-Example";
+			productReference = F9DFCCA71BBC5F2500447D51 /* OriginateRemoteCollection-Example.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -172,7 +169,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F9DFCCA21BBC5F2400447D51 /* Build configuration list for PBXProject "OriginateAsyncCollection-Example" */;
+			buildConfigurationList = F9DFCCA21BBC5F2400447D51 /* Build configuration list for PBXProject "OriginateRemoteCollection-Example" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -185,7 +182,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F9DFCCA61BBC5F2400447D51 /* OriginateAsyncCollection-Example */,
+				F9DFCCA61BBC5F2400447D51 /* OriginateRemoteCollection-Example */,
 			);
 		};
 /* End PBXProject section */
@@ -196,8 +193,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9DFCCBA1BBC5F2500447D51 /* LaunchScreen.storyboard in Resources */,
-				F9DFCCC81BBC986E00447D51 /* OriginateAsyncCollection.podspec in Resources */,
-				F9DFCCCA1BBC987200447D51 /* LICENSE in Resources */,
 				F9DFCCB71BBC5F2500447D51 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -232,7 +227,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OriginateAsyncCollection-Example/Pods-OriginateAsyncCollection-Example-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OriginateRemoteCollection-Example/Pods-OriginateRemoteCollection-Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CD0EBE09E4509CCCF1B1F7F7 /* Embed Pods Frameworks */ = {
@@ -247,7 +242,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OriginateAsyncCollection-Example/Pods-OriginateAsyncCollection-Example-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OriginateRemoteCollection-Example/Pods-OriginateRemoteCollection-Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -260,7 +255,6 @@
 				F9DFCCB21BBC5F2500447D51 /* MyViewController.m in Sources */,
 				F9DFCCD01BBC9A7F00447D51 /* MyEmptyController.m in Sources */,
 				F9DFCCAF1BBC5F2500447D51 /* AppDelegate.m in Sources */,
-				F9DFCCC61BBC986800447D51 /* README.md in Sources */,
 				F9DFCCCD1BBC992600447D51 /* MyDataSource.m in Sources */,
 				F9DFCCAC1BBC5F2500447D51 /* main.m in Sources */,
 			);
@@ -364,24 +358,24 @@
 		};
 		F9DFCCBF1BBC5F2500447D51 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CC1A230148ABD1866B9CE362 /* Pods-OriginateAsyncCollection-Example.debug.xcconfig */;
+			baseConfigurationReference = CC1A230148ABD1866B9CE362 /* Pods-OriginateRemoteCollectionExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "OriginateAsyncCollection-Example/Info.plist";
+				INFOPLIST_FILE = "OriginateRemoteCollection-Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.originate.OriginateAsyncCollection-Example";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.originate.OriginateRemoteCollection-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
 		F9DFCCC01BBC5F2500447D51 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4A0E30690E6B9DF8F6FFAE9C /* Pods-OriginateAsyncCollection-Example.release.xcconfig */;
+			baseConfigurationReference = 4A0E30690E6B9DF8F6FFAE9C /* Pods-OriginateRemoteCollection-Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "OriginateAsyncCollection-Example/Info.plist";
+				INFOPLIST_FILE = "OriginateRemoteCollection-Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.originate.OriginateAsyncCollection-Example";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.originate.OriginateRemoteCollection-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -389,7 +383,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F9DFCCA21BBC5F2400447D51 /* Build configuration list for PBXProject "OriginateAsyncCollection-Example" */ = {
+		F9DFCCA21BBC5F2400447D51 /* Build configuration list for PBXProject "OriginateRemoteCollection-Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F9DFCCBC1BBC5F2500447D51 /* Debug */,
@@ -398,7 +392,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F9DFCCBE1BBC5F2500447D51 /* Build configuration list for PBXNativeTarget "OriginateAsyncCollection-Example" */ = {
+		F9DFCCBE1BBC5F2500447D51 /* Build configuration list for PBXNativeTarget "OriginateRemoteCollection-Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F9DFCCBF1BBC5F2500447D51 /* Debug */,

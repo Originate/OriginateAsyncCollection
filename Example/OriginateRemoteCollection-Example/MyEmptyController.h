@@ -1,6 +1,6 @@
 //
 //  MyEmptyController.h
-//  OriginateAsyncCollection-Example
+//  OriginateRemoteCollection-Example
 //
 //  Created by Philip Kluz on 10/1/15.
 //  Copyright © 2015 originate.com. All rights reserved.
