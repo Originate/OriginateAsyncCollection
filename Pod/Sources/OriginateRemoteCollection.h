@@ -1,9 +1,9 @@
 //
 //  OriginateRemoteCollection.h
-//  OriginateRemoteCollection-Example
+//  OriginateRemoteCollection
 //
 //  Created by Philip Kluz on 9/30/15.
-//  Copyright © 2015 originate.com. All rights reserved.
+//  Copyright © 2015 Originate Inc. All rights reserved.
 //
 
 @import Foundation;
@@ -22,10 +22,11 @@ typedef void(^OriginateRemoteCollectionLoadHandler)(OriginateRemoteCollectionLoa
 
 #pragma mark - Methods
 - (void)load:(OriginateRemoteCollectionLoadHandler)loadHandler;
-- (void)loadFromArray:(NSArray *)array;
+- (void)loadFromArray:(NSArray<T> *)array;
 
 - (NSUInteger)count;
 - (T)objectAtIndex:(NSUInteger)index;
+- (T)objectAtIndexedSubscript:(NSUInteger)index;
 - (NSUInteger)indexOfObject:(T)object;
 - (NSArray *)allObjects;
 
@@ -45,7 +46,7 @@ typedef void(^OriginateRemoteCollectionLoadHandler)(OriginateRemoteCollectionLoa
 @optional
 - (void)remoteCollectionWillLoad:(OriginateRemoteCollection *)collection;
 - (void)remoteCollectionDidLoad:(OriginateRemoteCollection *)collection;
-- (void)remoteCollection:(OriginateRemoteCollection *)collection failedWithError:(NSError *)error;
+- (void)remoteCollection:(OriginateRemoteCollection *)collection didFailWithError:(NSError *)error;
 
 @end
 

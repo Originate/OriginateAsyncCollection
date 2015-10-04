@@ -7,13 +7,13 @@
 //
 
 #import "MyViewController.h"
-#import "MyDataSource.h"
+#import "MyDateDataSource.h"
 #import "MyEmptyController.h"
 
 @interface MyViewController () <MyEmptyControllerDelegate>
 
 #pragma mark - Properties
-@property (nonatomic, strong, readwrite) MyDataSource<NSDate *> *dataSource;
+@property (nonatomic, strong, readwrite) MyDateDataSource *dataSource;
 @property (nonatomic, strong, readwrite) MyEmptyController *emptyController;
 
 @end
@@ -120,10 +120,10 @@
     return _tableView;
 }
 
-- (MyDataSource<NSDate *> *)dataSource
+- (MyDateDataSource *)dataSource
 {
     if (!_dataSource) {
-        _dataSource = [[MyDataSource alloc] initWithTableView:self.tableView];
+        _dataSource = [[MyDateDataSource alloc] initWithTableView:self.tableView];
     }
     
     return _dataSource;

@@ -10,8 +10,8 @@
 @import OriginateRemoteCollection;
 @import DZNEmptyDataSet;
 
-@interface MyDataSource<__covariant T> : OriginateMutableRemoteCollection <UITableViewDataSource,
-                                                                            UITableViewDelegate>
+@interface MyDateDataSource : OriginateMutableRemoteCollection <UITableViewDataSource,
+                                                                UITableViewDelegate>
 
 #pragma mark - Properties
 - (instancetype)initWithTableView:(UITableView *)tableView;

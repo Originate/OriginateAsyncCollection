@@ -1,9 +1,9 @@
 //
 //  OriginateRemoteCollection.m
-//  OriginateRemoteCollection-Example
+//  OriginateRemoteCollection
 //
 //  Created by Philip Kluz on 9/30/15.
-//  Copyright © 2015 originate.com. All rights reserved.
+//  Copyright © 2015 Originate Inc. All rights reserved.
 //
 
 #import "OriginateRemoteCollection.h"
@@ -58,6 +58,11 @@
     }
     
     return [self.objects objectAtIndex:index];
+}
+
+- (id)objectAtIndexedSubscript:(NSUInteger)index
+{
+    return [self objectAtIndex:index];
 }
 
 - (NSUInteger)indexOfObject:(id)object
@@ -117,8 +122,8 @@
 {
     [self setState:OriginateRemoteCollectionStateIdle error:error];
     
-    if ([self.delegate respondsToSelector:@selector(remoteCollection:failedWithError:)]) {
-        [self.delegate remoteCollection:self failedWithError:error];
+    if ([self.delegate respondsToSelector:@selector(remoteCollection:didFailWithError:)]) {
+        [self.delegate remoteCollection:self didFailWithError:error];
     }
 }
 

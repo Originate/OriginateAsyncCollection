@@ -1,9 +1,9 @@
 //
 //  OriginateMutableRemoteCollection.m
-//  OriginateRemoteCollection-Example
+//  OriginateRemoteCollection
 //
 //  Created by Philip Kluz on 10/03/15.
-//  Copyright © 2015 originate.com. All rights reserved.
+//  Copyright © 2015 Originate Inc. All rights reserved.
 //
 
 #import "OriginateMutableRemoteCollection.h"
@@ -14,6 +14,7 @@
     NSMutableArray *_objects;
 }
 
+#pragma mark - Properties
 @property (nonatomic, strong, readwrite) NSMutableArray *objects;
 
 @end
@@ -44,14 +45,16 @@
 
 - (void)setObjects:(NSMutableArray *)objects
 {
-    [super setObjects:objects];
+    [self setState:OriginateRemoteCollectionStateIdle error:nil];
+    
+    if (![_objects isEqualToArray:objects]) {
+        _objects = objects ?: [NSMutableArray array];
+    }
+    
+    if ([self.delegate respondsToSelector:@selector(remoteCollectionDidLoad:)]) {
+        [self.delegate remoteCollectionDidLoad:self];
+    }
 }
-
-- (NSMutableArray *)allObjects
-{
-    return self.objects;
-}
-
 
 #pragma mark - OriginateMutableRemoteCollection
 

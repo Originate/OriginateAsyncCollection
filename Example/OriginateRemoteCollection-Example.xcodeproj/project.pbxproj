@@ -13,7 +13,7 @@
 		F9DFCCB21BBC5F2500447D51 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DFCCB11BBC5F2500447D51 /* MyViewController.m */; };
 		F9DFCCB71BBC5F2500447D51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9DFCCB61BBC5F2500447D51 /* Assets.xcassets */; };
 		F9DFCCBA1BBC5F2500447D51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9DFCCB81BBC5F2500447D51 /* LaunchScreen.storyboard */; };
-		F9DFCCCD1BBC992600447D51 /* MyDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DFCCCC1BBC992600447D51 /* MyDataSource.m */; settings = {ASSET_TAGS = (); }; };
+		F9DFCCCD1BBC992600447D51 /* MyDateDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DFCCCC1BBC992600447D51 /* MyDateDataSource.m */; settings = {ASSET_TAGS = (); }; };
 		F9DFCCD01BBC9A7F00447D51 /* MyEmptyController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DFCCCF1BBC9A7F00447D51 /* MyEmptyController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
@@ -33,8 +33,8 @@
 		F9DFCCC51BBC986800447D51 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		F9DFCCC71BBC986E00447D51 /* OriginateRemoteCollection.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = OriginateRemoteCollection.podspec; path = ../OriginateRemoteCollection.podspec; sourceTree = "<group>"; };
 		F9DFCCC91BBC987200447D51 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		F9DFCCCB1BBC992600447D51 /* MyDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDataSource.h; sourceTree = "<group>"; };
-		F9DFCCCC1BBC992600447D51 /* MyDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDataSource.m; sourceTree = "<group>"; };
+		F9DFCCCB1BBC992600447D51 /* MyDateDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDateDataSource.h; sourceTree = "<group>"; };
+		F9DFCCCC1BBC992600447D51 /* MyDateDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDateDataSource.m; sourceTree = "<group>"; };
 		F9DFCCCE1BBC9A7F00447D51 /* MyEmptyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyEmptyController.h; sourceTree = "<group>"; };
 		F9DFCCCF1BBC9A7F00447D51 /* MyEmptyController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyEmptyController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,8 +94,8 @@
 				F9DFCCAE1BBC5F2500447D51 /* AppDelegate.m */,
 				F9DFCCB01BBC5F2500447D51 /* MyViewController.h */,
 				F9DFCCB11BBC5F2500447D51 /* MyViewController.m */,
-				F9DFCCCB1BBC992600447D51 /* MyDataSource.h */,
-				F9DFCCCC1BBC992600447D51 /* MyDataSource.m */,
+				F9DFCCCB1BBC992600447D51 /* MyDateDataSource.h */,
+				F9DFCCCC1BBC992600447D51 /* MyDateDataSource.m */,
 				F9DFCCCE1BBC9A7F00447D51 /* MyEmptyController.h */,
 				F9DFCCCF1BBC9A7F00447D51 /* MyEmptyController.m */,
 				F9DFCCD11BBCB8D800447D51 /* Resources */,
@@ -255,7 +255,7 @@
 				F9DFCCB21BBC5F2500447D51 /* MyViewController.m in Sources */,
 				F9DFCCD01BBC9A7F00447D51 /* MyEmptyController.m in Sources */,
 				F9DFCCAF1BBC5F2500447D51 /* AppDelegate.m in Sources */,
-				F9DFCCCD1BBC992600447D51 /* MyDataSource.m in Sources */,
+				F9DFCCCD1BBC992600447D51 /* MyDateDataSource.m in Sources */,
 				F9DFCCAC1BBC5F2500447D51 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,9 +1,9 @@
 //
 //  OriginateMutableRemoteCollection.h
-//  OriginateRemoteCollection-Example
+//  OriginateRemoteCollection
 //
 //  Created by Philip Kluz on 10/03/15.
-//  Copyright © 2015 originate.com. All rights reserved.
+//  Copyright © 2015 Originate Inc. All rights reserved.
 //
 
 #import "OriginateRemoteCollection.h"
@@ -26,14 +26,14 @@ typedef void(^OriginateMutableRemoteCollectionMutationHandler)(OriginateMutableR
 
 @end
 
-@interface OriginateMutableRemoteCollection : OriginateRemoteCollection
+@interface OriginateMutableRemoteCollection<T> : OriginateRemoteCollection
 
 #pragma mark - Properties
 @property (nonatomic, weak, readwrite) id<OriginateMutableRemoteCollectionDelegate> delegate;
 
 #pragma mark - Methods
-- (void)addObjects:(NSArray *)objects handler:(OriginateMutableRemoteCollectionMutationHandler)addHandler;
-- (void)removeObjects:(NSArray *)objects handler:(OriginateMutableRemoteCollectionMutationHandler)removeHandler;
+- (void)addObjects:(NSArray<T> *)objects handler:(OriginateMutableRemoteCollectionMutationHandler)addHandler;
+- (void)removeObjects:(NSArray<T> *)objects handler:(OriginateMutableRemoteCollectionMutationHandler)removeHandler;
 
 @end
 

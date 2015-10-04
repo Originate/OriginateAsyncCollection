@@ -1,23 +1,23 @@
 //
-//  MyDataSource.m
+//  MyDateDataSource.m
 //  OriginateRemoteCollection-Example
 //
 //  Created by Philip Kluz on 10/1/15.
 //  Copyright © 2015 originate.com. All rights reserved.
 //
 
-#import "MyDataSource.h"
+#import "MyDateDataSource.h"
 
-@interface MyDataSource () <OriginateMutableRemoteCollectionDelegate>
+@interface MyDateDataSource () <OriginateMutableRemoteCollectionDelegate>
 
 #pragma mark - Properties
 @property (nonatomic, weak, readwrite) UITableView *tableView;
 
 @end
 
-@implementation MyDataSource
+@implementation MyDateDataSource
 
-#pragma mark - MyDataSource
+#pragma mark - MyDateDataSource
 
 - (instancetype)initWithTableView:(UITableView *)tableView
 {
@@ -43,7 +43,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([UITableViewCell class])];
-    cell.textLabel.text = [NSString stringWithFormat:@"%@", [self objectAtIndex:indexPath.row]];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@", self[indexPath.row]];
     
     return cell;
 }
@@ -56,7 +56,7 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        id objectToRemove = [self objectAtIndex:indexPath.row];
+        id objectToRemove = self[indexPath.row];
         [self removeObjects:@[objectToRemove]
                     handler:^(void (^completion)(BOOL success, NSError *error))
         {
@@ -112,7 +112,7 @@
     [self.tableView reloadData];
 }
 
-- (void)remoteCollection:(OriginateRemoteCollection *)collection failedWithError:(NSError *)error
+- (void)remoteCollection:(OriginateRemoteCollection *)collection didFailWithError:(NSError *)error
 {
     [self.tableView reloadData];
 }

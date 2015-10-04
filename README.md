@@ -1,7 +1,7 @@
 # OriginateRemoteCollection
 [![CI Status](http://img.shields.io/travis/Originate/OriginateRemoteCollection.svg?style=flat)](https://travis-ci.org/Originate/OriginateRemoteCollection)
 
-> A (high level) class modeling a remotly retrieved collection of data.
+> A (high level) class modeling a remotely retrieved collection of data.
 
 <div align="center">
     <img src="Example/Example.gif" alt="GIF" />
