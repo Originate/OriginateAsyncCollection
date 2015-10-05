@@ -12,11 +12,9 @@
 @interface OriginateMutableRemoteCollection ()
 {
     NSMutableArray *_objects;
-    NSHashTable<id<OriginateMutableRemoteCollectionDelegate>> *_delegates;
 }
 
 #pragma mark - Propertis
-@property (nonatomic, strong, readwrite) NSHashTable<id<OriginateMutableRemoteCollectionDelegate>> *delegates;
 @property (nonatomic, strong, readwrite) NSMutableArray *objects;
 
 @end
@@ -24,6 +22,7 @@
 @implementation OriginateMutableRemoteCollection
 
 @dynamic objects;
+@dynamic delegate;
 
 
 #pragma mark - OriginateRemoteCollection
@@ -34,7 +33,6 @@
     
     if (self) {
         _objects = [NSMutableArray array];
-        _delegates = [NSHashTable weakObjectsHashTable];
     }
     
     return self;
@@ -53,10 +51,8 @@
         _objects = [objects mutableCopy] ?: [NSMutableArray array];
     }
     
-    for (id delegate in self.delegates) {
-        if ([delegate respondsToSelector:@selector(remoteCollectionDidLoad:)]) {
-            [delegate remoteCollectionDidLoad:self];
-        }
+    if ([self.delegate respondsToSelector:@selector(remoteCollectionDidLoad:)]) {
+        [self.delegate remoteCollectionDidLoad:self];
     }
 }
 
@@ -70,10 +66,8 @@
     
     [self setLoading];
     
-    for (id delegate in self.delegates) {
-        if ([delegate respondsToSelector:@selector(remoteCollection:willAddObjects:)]) {
-            [delegate remoteCollection:self willAddObjects:objects];
-        }
+    if ([self.delegate respondsToSelector:@selector(remoteCollection:willAddObjects:)]) {
+        [self.delegate remoteCollection:self willAddObjects:objects];
     }
     
     [self addObjects:objects];
@@ -95,10 +89,8 @@
     [self setState:OriginateRemoteCollectionStateIdle error:nil];
     [self.objects addObjectsFromArray:objects];
     
-    for (id delegate in self.delegates) {
-        if ([delegate respondsToSelector:@selector(remoteCollection:didAddObjects:)]) {
-            [delegate remoteCollection:self didAddObjects:objects];
-        }
+    if ([self.delegate respondsToSelector:@selector(remoteCollection:didAddObjects:)]) {
+        [self.delegate remoteCollection:self didAddObjects:objects];
     }
 }
 
@@ -111,10 +103,8 @@
     [self setState:OriginateRemoteCollectionStateIdle error:nil];
     [self.objects removeObjectsInArray:objects];
     
-    for (id delegate in self.delegates) {
-        if ([delegate respondsToSelector:@selector(remoteCollection:didRevertAdditionOfObjects:error:)]) {
-            [delegate remoteCollection:self didRevertAdditionOfObjects:objects error:error];
-        }
+    if ([self.delegate respondsToSelector:@selector(remoteCollection:didRevertAdditionOfObjects:error:)]) {
+        [self.delegate remoteCollection:self didRevertAdditionOfObjects:objects error:error];
     }
 }
 
@@ -126,10 +116,8 @@
     
     [self setLoading];
     
-    for (id delegate in self.delegates) {
-        if ([delegate respondsToSelector:@selector(remoteCollection:willRemoveObjects:)]) {
-            [delegate remoteCollection:self willRemoveObjects:objects];
-        }
+    if ([self.delegate respondsToSelector:@selector(remoteCollection:willRemoveObjects:)]) {
+        [self.delegate remoteCollection:self willRemoveObjects:objects];
     }
     
     NSMutableSet *intersectRemove = [NSMutableSet setWithArray:self.objects];
@@ -155,10 +143,8 @@
     [self setState:OriginateRemoteCollectionStateIdle error:nil];
     [self.objects removeObjectsInArray:objects];
     
-    for (id delegate in self.delegates) {
-        if ([delegate respondsToSelector:@selector(remoteCollection:didRemoveObjects:)]) {
-            [delegate remoteCollection:self didRemoveObjects:objects];
-        }
+    if ([self.delegate respondsToSelector:@selector(remoteCollection:didRemoveObjects:)]) {
+        [self.delegate remoteCollection:self didRemoveObjects:objects];
     }
 }
 
@@ -171,22 +157,8 @@
     [self setState:OriginateRemoteCollectionStateIdle error:nil];
     [self.objects addObjectsFromArray:objects];
     
-    for (id delegate in self.delegates) {
-        if ([delegate respondsToSelector:@selector(remoteCollection:didRevertRemovalOfObjects:error:)]) {
-            [delegate remoteCollection:self didRevertRemovalOfObjects:objects error:error];
-        }
-    }
-}
-
-- (void)addDelegate:(id<OriginateMutableRemoteCollectionDelegate>)delegate
-{
-    [_delegates addObject:delegate];
-}
-
-- (void)removeDelegate:(id<OriginateMutableRemoteCollectionDelegate>)delegate
-{
-    if ([_delegates member:delegate]) {
-        [_delegates removeObject:delegate];
+    if ([self.delegate respondsToSelector:@selector(remoteCollection:didRevertRemovalOfObjects:error:)]) {
+        [self.delegate remoteCollection:self didRevertRemovalOfObjects:objects error:error];
     }
 }
 

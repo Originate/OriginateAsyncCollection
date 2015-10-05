@@ -9,16 +9,6 @@
 #import "OriginateRemoteCollection.h"
 #import "OriginateRemoteCollection+Internal.h"
 
-@interface OriginateRemoteCollection()
-{
-    NSHashTable<id<OriginateRemoteCollectionDelegate>> *_delegates;
-}
-
-#pragma mark - Propertis
-@property (nonatomic, strong, readwrite) NSHashTable<id<OriginateRemoteCollectionDelegate>> *delegates;
-
-@end
-
 @implementation OriginateRemoteCollection
 
 #pragma mark - NSObject
@@ -29,7 +19,6 @@
     
     if (self) {
         _state = OriginateRemoteCollectionStateNone;
-        _delegates = [NSHashTable weakObjectsHashTable];
     }
     
     return self;
@@ -90,18 +79,6 @@
     return self.objects;
 }
 
-- (void)addDelegate:(id<OriginateRemoteCollectionDelegate>)delegate
-{
-    [_delegates addObject:delegate];
-}
-
-- (void)removeDelegate:(id<OriginateRemoteCollectionDelegate>)delegate
-{
-    if ([_delegates member:delegate]) {
-        [_delegates removeObject: delegate];
-    }
-}
-
 
 #pragma mark - OriginateRemoteCollection (Transitions)
 
@@ -113,10 +90,8 @@
         _objects = objects ?: @[];
     }
     
-    for (id delegate in self.delegates) {
-        if ([delegate respondsToSelector:@selector(remoteCollectionDidLoad:)]) {
-            [delegate remoteCollectionDidLoad:self];
-        }
+    if ([self.delegate respondsToSelector:@selector(remoteCollectionDidLoad:)]) {
+        [self.delegate remoteCollectionDidLoad:self];
     }
 }
 
@@ -128,10 +103,8 @@
         {
             [self setState:OriginateRemoteCollectionStateLoading error:nil];
             
-            for (id delegate in self.delegates) {
-                if ([delegate respondsToSelector:@selector(remoteCollectionWillLoad:)]) {
-                    [delegate remoteCollectionWillLoad:self];
-                }
+            if ([self.delegate respondsToSelector:@selector(remoteCollectionWillLoad:)]) {
+                [self.delegate remoteCollectionWillLoad:self];
             }
             
             break;
@@ -148,10 +121,8 @@
 {
     [self setState:OriginateRemoteCollectionStateIdle error:error];
     
-    for (id delegate in self.delegates) {
-        if ([delegate respondsToSelector:@selector(remoteCollection:didFailWithError:)]) {
-            [delegate remoteCollection:self didFailWithError:error];
-        }
+    if ([self.delegate respondsToSelector:@selector(remoteCollection:didFailWithError:)]) {
+        [self.delegate remoteCollection:self didFailWithError:error];
     }
 }
 

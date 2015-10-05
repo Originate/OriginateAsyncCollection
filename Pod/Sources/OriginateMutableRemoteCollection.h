@@ -28,12 +28,14 @@ typedef void(^OriginateMutableRemoteCollectionMutationHandler)(OriginateMutableR
 
 @interface OriginateMutableRemoteCollection<T> : OriginateRemoteCollection
 
-#pragma mark - Methods
-- (void)addObjects:(NSArray<T> *)objects handler:(OriginateMutableRemoteCollectionMutationHandler)addHandler;
-- (void)removeObjects:(NSArray<T> *)objects handler:(OriginateMutableRemoteCollectionMutationHandler)removeHandler;
+#pragma mark - Properties
+@property (nonatomic, weak, readwrite) id<OriginateMutableRemoteCollectionDelegate> delegate;
 
-- (void)addDelegate:(id<OriginateMutableRemoteCollectionDelegate>)delegate;
-- (void)removeDelegate:(id<OriginateMutableRemoteCollectionDelegate>)delegate;
+#pragma mark - Methods
+- (void)addObjects:(NSArray<T> *)objects
+           handler:(OriginateMutableRemoteCollectionMutationHandler)addHandler;
+- (void)removeObjects:(NSArray<T> *)objects
+              handler:(OriginateMutableRemoteCollectionMutationHandler)removeHandler;
 
 @end
 
