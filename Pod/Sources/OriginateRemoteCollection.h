@@ -17,9 +17,6 @@ typedef void(^OriginateRemoteCollectionLoadHandler)(OriginateRemoteCollectionLoa
 
 @interface OriginateRemoteCollection<__covariant T> : NSObject
 
-#pragma mark - Properties
-@property (nonatomic, weak, readwrite) id<OriginateRemoteCollectionDelegate> delegate;
-
 #pragma mark - Methods
 - (void)load:(OriginateRemoteCollectionLoadHandler)loadHandler;
 - (void)loadFromArray:(NSArray<T> *)array;
@@ -29,6 +26,9 @@ typedef void(^OriginateRemoteCollectionLoadHandler)(OriginateRemoteCollectionLoa
 - (T)objectAtIndexedSubscript:(NSUInteger)index;
 - (NSUInteger)indexOfObject:(T)object;
 - (NSArray *)allObjects;
+
+- (void)addDelegate:(id<OriginateRemoteCollectionDelegate>)delegate;
+- (void)removeDelegate:(id<OriginateRemoteCollectionDelegate>)delegate;
 
 @end
 

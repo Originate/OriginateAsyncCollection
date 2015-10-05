@@ -24,7 +24,7 @@
     self = [super init];
     
     if (self) {
-        self.delegate = self;
+        [self addDelegate:self];
         _tableView = tableView;
         [tableView registerClass:[UITableViewCell class]
           forCellReuseIdentifier:NSStringFromClass([UITableViewCell class])];
