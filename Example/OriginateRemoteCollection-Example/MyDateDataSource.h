@@ -10,8 +10,8 @@
 @import OriginateRemoteCollection;
 @import DZNEmptyDataSet;
 
-@interface MyDateDataSource : OriginateMutableRemoteCollection <UITableViewDataSource,
-                                                                UITableViewDelegate>
+@interface MyDateDataSource : OriginateMutableRemoteArray <UITableViewDataSource,
+                                                           UITableViewDelegate>
 
 #pragma mark - Properties
 - (instancetype)initWithTableView:(UITableView *)tableView;
