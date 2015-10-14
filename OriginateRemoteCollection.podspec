@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name                = "OriginateRemoteCollection"
-  s.version             = "0.1.0"
-  s.summary             = "A (high level) class modeling a remotely retrieved collection of data."
+  s.version             = "0.2.0"
+  s.summary             = "A (high-level) class modeling a remotely retrieved collection of data."
 
   s.homepage            = "https://github.com/Originate/OriginateRemoteCollection"
   s.license             = 'MIT'
