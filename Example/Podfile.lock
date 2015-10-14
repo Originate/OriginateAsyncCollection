@@ -1,6 +1,6 @@
 PODS:
   - DZNEmptyDataSet (1.7.2)
-  - OriginateRemoteCollection (0.0.1)
+  - OriginateRemoteCollection (0.1.0)
 
 DEPENDENCIES:
   - DZNEmptyDataSet
@@ -12,6 +12,6 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   DZNEmptyDataSet: 0ec00bfc230d7450997b60c127afdd0b9f24f3b6
-  OriginateRemoteCollection: b8386d82fc2d677dbace955a8095bfe9f1444cb0
+  OriginateRemoteCollection: 7eb594ffec271eb36a8b28c5037f16f2e846238f
 
 COCOAPODS: 0.38.2

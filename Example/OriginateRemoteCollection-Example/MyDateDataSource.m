@@ -8,7 +8,7 @@
 
 #import "MyDateDataSource.h"
 
-@interface MyDateDataSource () <OriginateMutableRemoteCollectionDelegate>
+@interface MyDateDataSource () <OriginateMutableRemoteArrayDelegate>
 
 #pragma mark - Properties
 @property (nonatomic, weak, readwrite) UITableView *tableView;
@@ -70,49 +70,49 @@
     }
 }
 
-#pragma mark - <OriginateRemoteCollectionDelegate>
+#pragma mark - <OriginateRemoteArrayDelegate>
 
-- (void)remoteCollectionWillLoad:(OriginateRemoteCollection *)collection
+- (void)remoteArrayWillLoad:(OriginateRemoteArray *)array
 {
     [self.tableView reloadEmptyDataSet];
 }
 
-- (void)remoteCollectionDidLoad:(OriginateRemoteCollection *)collection
+- (void)remoteArrayDidLoad:(OriginateRemoteArray *)array
 {
     [self.tableView reloadData];
 }
 
-- (void)remoteCollection:(OriginateRemoteCollection *)collection willAddObjects:(NSArray *)objects
+- (void)remoteArray:(OriginateRemoteArray *)array willAddObjects:(NSArray *)objects
 {
     [self.tableView reloadEmptyDataSet];
 }
 
-- (void)remoteCollection:(OriginateRemoteCollection *)collection didAddObjects:(NSArray *)objects
+- (void)remoteArray:(OriginateRemoteArray *)array didAddObjects:(NSArray *)objects
 {
     [self.tableView reloadData];
 }
 
-- (void)remoteCollection:(OriginateRemoteCollection *)collection willRemoveObjects:(NSArray *)objects
+- (void)remoteArray:(OriginateRemoteArray *)array willRemoveObjects:(NSArray *)objects
 {
     [self.tableView reloadEmptyDataSet];
 }
 
-- (void)remoteCollection:(OriginateRemoteCollection *)collection didRemoveObjects:(NSArray *)objects
+- (void)remoteArray:(OriginateRemoteArray *)array didRemoveObjects:(NSArray *)objects
 {
     [self.tableView reloadEmptyDataSet];
 }
 
-- (void)remoteCollection:(OriginateRemoteCollection *)collection didRevertAdditionOfObjects:(NSArray *)objects error:(NSError *)error
+- (void)remoteArray:(OriginateRemoteArray *)array didRevertAdditionOfObjects:(NSArray *)objects error:(NSError *)error
 {
     [self.tableView reloadData];
 }
 
-- (void)remoteCollection:(OriginateRemoteCollection *)collection didRevertRemovalOfObjects:(NSArray *)objects error:(NSError *)error
+- (void)remoteArray:(OriginateRemoteArray *)array didRevertRemovalOfObjects:(NSArray *)objects error:(NSError *)error
 {
     [self.tableView reloadData];
 }
 
-- (void)remoteCollection:(OriginateRemoteCollection *)collection didFailWithError:(NSError *)error
+- (void)remoteArray:(OriginateRemoteArray *)array didFailWithError:(NSError *)error
 {
     [self.tableView reloadData];
 }
