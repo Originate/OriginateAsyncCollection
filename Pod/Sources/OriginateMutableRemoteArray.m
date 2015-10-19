@@ -46,6 +46,7 @@
 - (void)setObjects:(NSArray *)objects
 {
     [self setState:OriginateRemoteArrayStateIdle error:nil];
+    [self objectsWillUpdate];
     
     if (![_objects isEqualToArray:objects]) {
         _objects = [objects mutableCopy] ?: [NSMutableArray array];
@@ -87,6 +88,8 @@
     }
     
     [self setState:OriginateRemoteArrayStateIdle error:nil];
+    [self objectsWillUpdate];
+    
     [self.objects addObjectsFromArray:objects];
     
     if ([self.delegate respondsToSelector:@selector(remoteArray:didAddObjects:)]) {
@@ -101,6 +104,8 @@
     }
     
     [self setState:OriginateRemoteArrayStateIdle error:nil];
+    [self objectsWillUpdate];
+    
     [self.objects removeObjectsInArray:objects];
     
     if ([self.delegate respondsToSelector:@selector(remoteArray:didRevertAdditionOfObjects:error:)]) {
@@ -141,6 +146,8 @@
     }
     
     [self setState:OriginateRemoteArrayStateIdle error:nil];
+    [self objectsWillUpdate];
+    
     [self.objects removeObjectsInArray:objects];
     
     if ([self.delegate respondsToSelector:@selector(remoteArray:didRemoveObjects:)]) {

@@ -79,12 +79,18 @@
     return self.objects;
 }
 
+- (void)objectsWillUpdate
+{
+    // intended to be overriden by subclass
+}
+
 
 #pragma mark - OriginateRemoteArray (Transitions)
 
 - (void)setObjects:(NSArray *)objects
 {
     [self setState:OriginateRemoteArrayStateIdle error:nil];
+    [self objectsWillUpdate];
     
     if (![_objects isEqualToArray:objects]) {
         _objects = objects ?: @[];

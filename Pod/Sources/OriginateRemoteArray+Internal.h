@@ -25,6 +25,7 @@ typedef NS_ENUM(NSUInteger, OriginateRemoteArrayState) {
 @property (nonatomic, strong, readwrite) NSArray<T> *objects;
 
 #pragma mark - Methods
+- (void)objectsWillUpdate;
 - (void)setObjects:(NSArray<T> *)objects;
 - (void)setLoading;
 - (void)setError:(NSError *)error;
