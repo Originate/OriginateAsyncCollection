@@ -12,6 +12,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+extern NSString * const OriginateRemoteArrayObjectsKey;
+
 typedef void(^OriginateRemoteArrayLoadCompletion)(NSArray *result, NSError *error);
 typedef void(^OriginateRemoteArrayLoadHandler)(OriginateRemoteArrayLoadCompletion);
 

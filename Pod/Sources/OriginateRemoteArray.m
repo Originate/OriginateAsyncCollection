@@ -9,6 +9,8 @@
 #import "OriginateRemoteArray.h"
 #import "OriginateRemoteArray+Internal.h"
 
+NSString * const OriginateRemoteArrayObjectsKey = @"objects";
+
 @implementation OriginateRemoteArray
 
 #pragma mark - NSObject
