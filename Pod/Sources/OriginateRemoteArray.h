@@ -12,8 +12,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-extern NSString * const OriginateRemoteArrayObjectsKey;
-
 typedef void(^OriginateRemoteArrayLoadCompletion)(NSArray *result, NSError *error);
 typedef void(^OriginateRemoteArrayLoadHandler)(OriginateRemoteArrayLoadCompletion);
 
@@ -21,6 +19,7 @@ typedef void(^OriginateRemoteArrayLoadHandler)(OriginateRemoteArrayLoadCompletio
 
 #pragma mark - Properties
 @property (nonatomic, weak, readwrite) id<OriginateRemoteArrayDelegate> delegate;
+@property (nonatomic, copy, readonly) NSArray *allObjects;
 
 #pragma mark - Methods
 - (void)load:(OriginateRemoteArrayLoadHandler)loadHandler;
@@ -30,7 +29,6 @@ typedef void(^OriginateRemoteArrayLoadHandler)(OriginateRemoteArrayLoadCompletio
 - (T)objectAtIndex:(NSUInteger)index;
 - (T)objectAtIndexedSubscript:(NSUInteger)index;
 - (NSUInteger)indexOfObject:(T)object;
-- (NSArray *)allObjects;
 
 @end
 

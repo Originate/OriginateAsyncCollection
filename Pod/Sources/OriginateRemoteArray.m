@@ -9,8 +9,6 @@
 #import "OriginateRemoteArray.h"
 #import "OriginateRemoteArray+Internal.h"
 
-NSString * const OriginateRemoteArrayObjectsKey = @"objects";
-
 @implementation OriginateRemoteArray
 
 #pragma mark - NSObject
@@ -89,7 +87,9 @@ NSString * const OriginateRemoteArrayObjectsKey = @"objects";
     [self setState:OriginateRemoteArrayStateIdle error:nil];
     
     if (![_objects isEqualToArray:objects]) {
+        [self willChangeValueForKey:NSStringFromSelector(@selector(allObjects))];
         _objects = objects ?: @[];
+        [self didChangeValueForKey:NSStringFromSelector(@selector(allObjects))];
     }
     
     if ([self.delegate respondsToSelector:@selector(remoteArrayDidLoad:)]) {
