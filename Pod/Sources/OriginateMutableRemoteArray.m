@@ -48,7 +48,9 @@
     [self setState:OriginateRemoteArrayStateIdle error:nil];
     
     if (![_objects isEqualToArray:objects]) {
+        [self willChangeValueForKey:NSStringFromSelector(@selector(allObjects))];
         _objects = [objects mutableCopy] ?: [NSMutableArray array];
+        [self didChangeValueForKey:NSStringFromSelector(@selector(allObjects))];
     }
     
     if ([self.delegate respondsToSelector:@selector(remoteArrayDidLoad:)]) {
@@ -87,7 +89,10 @@
     }
     
     [self setState:OriginateRemoteArrayStateIdle error:nil];
+    
+    [self willChangeValueForKey:NSStringFromSelector(@selector(allObjects))];
     [self.objects addObjectsFromArray:objects];
+    [self didChangeValueForKey:NSStringFromSelector(@selector(allObjects))];
     
     if ([self.delegate respondsToSelector:@selector(remoteArray:didAddObjects:)]) {
         [self.delegate remoteArray:self didAddObjects:objects];
@@ -141,7 +146,10 @@
     }
     
     [self setState:OriginateRemoteArrayStateIdle error:nil];
+    
+    [self willChangeValueForKey:NSStringFromSelector(@selector(allObjects))];
     [self.objects removeObjectsInArray:objects];
+    [self didChangeValueForKey:NSStringFromSelector(@selector(allObjects))];
     
     if ([self.delegate respondsToSelector:@selector(remoteArray:didRemoveObjects:)]) {
         [self.delegate remoteArray:self didRemoveObjects:objects];

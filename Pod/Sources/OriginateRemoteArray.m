@@ -87,7 +87,9 @@
     [self setState:OriginateRemoteArrayStateIdle error:nil];
     
     if (![_objects isEqualToArray:objects]) {
+        [self willChangeValueForKey:NSStringFromSelector(@selector(allObjects))];
         _objects = objects ?: @[];
+        [self didChangeValueForKey:NSStringFromSelector(@selector(allObjects))];
     }
     
     if ([self.delegate respondsToSelector:@selector(remoteArrayDidLoad:)]) {
